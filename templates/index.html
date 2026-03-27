@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Medical Chatbot</p>
+        <h1>Ask clinical questions, get concise answers.</h1>
+        <p class="subhead">Context-aware responses grounded in your uploaded documents.</p>
+      </div>
+      <div class="badges">
+        <span class="pill">Retrieval-augmented</span>
+        <span class="pill">HIPAA-safe usage is your responsibility</span>
+      </div>
+    </header>
+
+    <section class="chat-panel">
+      <div class="chat-header">
+        <div>
+          <h2>Conversation</h2>
+          <p>Answers cite the most relevant sources.</p>
+        </div>
+        <button id="clear-btn" class="ghost">Clear</button>
+      </div>
+
+      <div id="chat-log" class="chat-log" aria-live="polite"></div>
+
+      <form id="chat-form" class="chat-input" autocomplete="off">
+        <input id="user-input" name="message" type="text" placeholder="Ask a question…" required />
+        <button type="submit" id="send-btn">Send</button>
+      </form>
+      <div id="status" class="status" role="status"></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
